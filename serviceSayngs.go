@@ -105,7 +105,7 @@ func GenerateSayngs(ctx context.Context, chSayngs chan<- string) {
 		select {
 		case <-ctx.Done():
 			return
-		case chSayngs <- sayngs[0+rand.Intn(len(sayngs))] + "\n":
+		case chSayngs <- sayngs[0+rand.Intn(len(sayngs)-1)] + "\n":
 		}
 	}
 
